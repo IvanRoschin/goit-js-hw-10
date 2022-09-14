@@ -15,12 +15,15 @@
   "author": "Alexander Repeta <alexander.repeta@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/IvanRoschin/goit-js-hw-10/issues"
+    "url": "https://github.com/IvanRoschin/goit-js-hw-10gi/issues"
   },
   "dependencies": {
     "flatpickr": "^4.6.13",
+    "lodash.debounce": "^4.0.8",
+    "lodash.throttle": "^4.1.1",
     "modern-normalize": "^1.1.0",
-    "notiflix": "^3.2.5"
+    "notiflix": "^3.2.5",
+    "parcel-plugin-handlebars-precompile": "^1.0.2"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",
