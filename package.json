@@ -33,8 +33,5 @@
     "parcel-transformer-hbs": "^1.0.4",
     "posthtml-include": "^1.7.4"
   },
-"transformers": {
-  "*.hbs": ["parcel-transformer-hbs"]
-},
   "browserslist": "> 0.5%, last 2 versions, not dead"
 }
