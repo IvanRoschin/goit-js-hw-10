@@ -31,7 +31,7 @@ function onSearch(e) {
 function renderCountryCard(country) {
   const countryCardMarkup = countryCardTpl(country);
   const countryListMarkup = countryListCardTpl(country);
-  console.log(country.length);
+  // console.log(country.length);
 
   if (country.length > 10) {
     refs.countryInfoCardContainer.innerHTML = '';
