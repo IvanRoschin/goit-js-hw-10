@@ -49,8 +49,4 @@ function renderCountryCard(country) {
 }
 
 //* F3 Error
-function onFetchError(error) {
-  if (response.status === 404) {
-    Notiflix.Notify.failure(`❌ Oops, there is no country with that name`);
-  }
-}
+function onFetchError(error) {}
