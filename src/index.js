@@ -17,20 +17,18 @@ refs.searchForm.addEventListener('input', debounce(onSearch, DEBOUNCE_DELAY));
 
 // !FUNCTIONS
 
-//* F1
+//* F1 Search
 function onSearch(e) {
   e.preventDefault();
   const searchQuery = document.getElementById('search-box').value.trim();
 
-  console.log('searchQuery', searchQuery);
-
   API.fetchCountries(searchQuery)
     .then(renderCountryCard)
     .catch(onFetchError)
-    .finally(() => refs.searchForm.reset());
+    .finally(() => (document.getElementById('search-box').value = ''));
 }
 
-//* F2
+//* F2 MArkup
 function renderCountryCard(country) {
   const countryCardMarkup = countryCardTpl(country);
   const countryListMarkup = countryListCardTpl(country);
@@ -43,7 +41,7 @@ function renderCountryCard(country) {
   } else if (country.length > 2 && country.length < 10) {
     refs.CountryInfoCardContainer.innerHTML = '';
     refs.CountryListCardContainer.innerHTML = countryListMarkup;
-  } else {
+  } else if (country.length === 1) {
     refs.CountryListCardContainer.innerHTML = '';
     refs.CountryInfoCardContainer.innerHTML = countryCardMarkup;
   }
@@ -51,5 +49,5 @@ function renderCountryCard(country) {
 
 //* F3
 function onFetchError(error) {
-  console.warn(`❌ Oops, there is no country with that name`);
+  Notiflix.Notify.failure(`❌ Oops, there is no country with that name`);
 }
