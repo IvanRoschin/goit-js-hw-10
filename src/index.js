@@ -24,7 +24,11 @@ function onSearch(e) {
   fetchCountries(searchQuery)
     .then(renderCountryCard)
     .catch(onFetchError)
-    .finally(() => (document.getElementById('search-box').value = ''));
+    .finally(
+      () => (document.getElementById('search-box').value = ''),
+      (refs.countryInfoCardContainer.innerHTML = ''),
+      (refs.countryListCardContainer.innerHTML = '')
+    );
 }
 
 //* F2 Markup
