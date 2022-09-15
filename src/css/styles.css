@@ -38,3 +38,13 @@ ul {
 padding: 0;
 margin: 0;
 }
+
+.item {
+  display: inline-block;
+}
+
+.item + .item::before {
+  display: inline-block;
+  white-space: pre;
+  content: ",";
+}
