@@ -19,16 +19,16 @@ refs.searchForm.addEventListener('input', debounce(onSearch, DEBOUNCE_DELAY));
 //* F1 Search
 function onSearch(e) {
   e.preventDefault();
+
   const searchQuery = document.getElementById('search-box').value.trim();
 
-  fetchCountries(searchQuery)
-    .then(renderCountryCard)
-    .catch(onFetchError)
-    .finally(
-      () => (document.getElementById('search-box').value = ''),
-      (refs.countryInfoCardContainer.innerHTML = ''),
-      (refs.countryListCardContainer.innerHTML = '')
-    );
+  console.log('searchQuery', searchQuery);
+
+  if (searchQuery === '') {
+    console.log('В Инпуте только пробелы, запрос на сервер не отправлен');
+    return;
+  } else console.log('отправляем запрос на сервер');
+  fetchCountries(searchQuery).then(renderCountryCard).catch(onFetchError);
 }
 
 //* F2 Markup
